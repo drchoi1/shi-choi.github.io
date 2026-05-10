@@ -38,14 +38,47 @@
   </style>
 </head>
 
-<body>
-  <div class="language-selector">
-    <select onchange="location.href=this.value">
-      <option value="/en/" selected>English</option>
-      <option value="/ko/">한국어</option>
-    </select>
+<body class="is-preload">
+
+  <section id="sidebar">
+    <div class="inner">
+
+      <div class="language-selector">
+        <select onchange="location.href=this.value">
+          <option value="/en/" selected>English</option>
+          <option value="/ko/">한국어</option>
+        </select>
+      </div>
+      
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#milestones">Our milestones</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <div id="wrapper">
+    <section id="home" class="wrapper style1 fullscreen fade-up">
+      <img src="/assets/images/STD_EN.png" alt="Save the Date">
+    </section>
+
+    <section id="milestones" class="wrapper style2 fade-up">
+      <!-- later -->
+    </section>
+
+    <section id="venue" class="wrapper style3 fade-up">
+      <!-- later -->
+    </section>
+
+    <section id="contact" class="wrapper style1 fade-up">
+      <!-- later -->
+    </section>
   </div>
 
-  <img src="/assets/images/STD_EN.png" alt="Save the Date">
+
 </body>
 </html>
