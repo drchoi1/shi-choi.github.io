@@ -27,23 +27,81 @@
     }
 
     #sidebar nav a {
-      color: #7A6250 !important;
+      color: var(--deep-brown) !important;
       font-family: "Cormorant Garamond", serif;
       letter-spacing: 0.05em;
     }
 
-    #sidebar nav a:hover {
-      color: #5A4638 !important;
+    #sidebar nav a:before
+    #sidebar nav a:after {
+      background-image: none !important;
+      background-color: var(--warm-brown) !important;
+    }
+
+    /* Individual nav underline colors */
+    #sidebar nav li:nth-child(1) a:after {
+      background-color: var(--deep-brown) !important;
+    }
+
+    #sidebar nav li:nth-child(2) a:after {
+      background-color: #5B4B38 !important;
+    }
+
+    #sidebar nav li:nth-child(3) a:after {
+      background-color: var(--deep-olive) !important;
+    }
+
+    #sidebar nav li:nth-child(4) a:after {
+      background-color: var(--olive) !important;
+    }
+
+    #sidebar nav li:nth-child(5) a:after {
+      background-color: #7E8B5E !important;
+    }
+
+    #sidebar nav li:nth-child(6) a:after {
+      background-color: var(--sage) !important;
     }
 
     #wrapper {
       margin-left: 18em;
     }
 
-    .wrapper.style1,
-    .wrapper.style2,
+    /* Stronger warm palette */
+    :root {
+      --parchment: #F3EEE6;
+      --warm-brown: #6F5643;
+      --deep-brown: #4A3529;
+      --olive: #66724E;
+      --deep-olive: #3F4A32;
+      --sage: #A9B894;
+      --soft-sage: #DDE5D1;
+    }
+
+    /* Stronger section title contrast */
+    .wrapper h1,
+    .wrapper h2,
+    .wrapper h3 {
+      color: var(--deep-brown) !important;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .wrapper p {
+      color: var(--warm-brown) !important;
+    }
+
+    /* More green, less khaki section variation */
+    .wrapper.style1 {
+      background: var(--parchment) !important;
+    }
+
+    .wrapper.style2 {
+      background: var(--soft-sage) !important;
+    }
+
     .wrapper.style3 {
-      background: #F3EEE6 !important;
+      background: #E8E3D8 !important;
     }
 
     .language-selector {
