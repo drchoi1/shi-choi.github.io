@@ -24,6 +24,13 @@
       position: fixed;
       top: 16px;
       right: 16px;
+      z-index: 10000;
+    }
+
+    .language-selector select {
+      padding: 6px 10px;
+      font-size: 14px;
+      border-radius: 4px;
     }
 
     select {
@@ -42,15 +49,24 @@
 
 <body class="is-preload">
 
+  <div class="language-selector">
+    <select onchange="location.href=this.value">
+      <option value="/en/" selected>English</option>
+      <option value="/ko/">한국어</option>
+    </select>
+  </div>
+
   <section id="sidebar">
     <div class="inner">
 
+      <!--
       <div class="language-selector">
         <select onchange="location.href=this.value">
           <option value="/en/" selected>English</option>
           <option value="/ko/">한국어</option>
         </select>
       </div>
+      -->
       
       <nav>
         <ul>
