@@ -181,6 +181,18 @@
       max-width: 520px;
     }
 
+    .rsvp-form {
+      margin-top: 2em;
+    }
+
+    .rsvp-form iframe {
+      width: 100%;
+      min-height: 1000px;
+      border: none;
+      border-radius: 12px;
+      background: white;
+    }
+
     /* Mobile timeline */
     @media screen and (max-width: 736px) {
       .timeline-item {
@@ -342,8 +354,25 @@
 
     <section id="rsvp" class="wrapper style3 fade-up">
       <div class="inner">
+
         <h2>RSVP</h2>
-        <p>Coming soon.</p>
+
+        <p>
+          We would be grateful if you could confirm your attendance
+          using the form below.
+        </p>
+
+        <div class="rsvp-form">
+
+          <iframe
+            src="https://forms.office.com/r/FazTVpUFUp"
+            width="100%"
+            height="1200"
+            frameborder="0">
+          </iframe>
+
+        </div>
+
       </div>
     </section>
 
