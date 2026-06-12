@@ -33,7 +33,7 @@
       letter-spacing: 0.05em;
     }
 
-    #sidebar nav a:before
+    #sidebar nav a:before,
     #sidebar nav a:after {
       background-image: none !important;
       background-color: var(--warm-brown) !important;
@@ -126,7 +126,82 @@
       width: auto;
     }
 
-    /* Mobile menu button */
+    .timeline {
+      margin-top: 3em;
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5em;
+      align-items: start;
+      position: relative;
+    }
+
+    .timeline-date {
+      text-align: right;
+      color: var(--deep-brown);
+      border-right: 1px solid var(--sage);
+      padding-right: 1.5em;
+    }
+
+    .timeline-date span {
+      display: block;
+      font-size: 1.8em;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-date small {
+      display: block;
+      margin-top: 0.4em;
+      color: var(--olive);
+      font-size: 0.9em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-content {
+      max-width: 620px;
+    }
+
+    .timeline-content img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 18px;
+      display: block;
+      margin-bottom: 1em;
+      box-shadow: 0 10px 30px rgba(74, 53, 41, 0.18);
+    }
+
+    .timeline-content p {
+      max-width: 520px;
+    }
+
+    /* Mobile timeline */
+    @media screen and (max-width: 736px) {
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+
+      .timeline-date {
+        text-align: left;
+        border-right: none;
+        border-left: 1px solid var(--sage);
+        padding-right: 0;
+        padding-left: 1em;
+      }
+
+      .timeline-content img {
+        max-width: 100%;
+      }
+    }
+
+    /* Mobile behavior */
     .menu-toggle {
       display: none;
       position: fixed;
@@ -139,9 +214,9 @@
       line-height: 42px;
       text-align: center;
 
-      background: #ffffff;
-      color: #333333;
-      border: 1px solid #cccccc;
+      background: #F3EEE6;
+      color: #4A3529;
+      border: 1px solid #A9B894;
       border-radius: 50%;
 
       font-size: 24px;
@@ -149,8 +224,7 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     } 
-
-    /* Mobile behavior */
+    
     @media screen and (max-width: 980px) {
       .menu-toggle {
         display: block;
@@ -226,7 +300,43 @@
     <section id="story" class="wrapper style2 fade-up">
       <div class="inner">
         <h2>Our story</h2>
-        <p>Coming soon.</p>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>2023.07. / 2023.10.</span>
+              <small>The usual beginning...</small>
+            </div>
+            <div class="timeline-content">
+              <img src="/assets/images/story-01.jpg" alt="Jackd">
+              <p>'a Chinese scammer...' or maybe not?</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>2024.01.</span>
+              <small>A leap of faith</small>
+            </div>
+            <div class="timeline-content">
+              <img src="/assets/images/story-02.jpg" alt="1stAlpine">
+              <p>Flying into the unknown... only to find the one</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>2027.04.03.</span>
+              <small>Nha Trang</small>
+            </div>
+            <div class="timeline-content">
+              <img src="/assets/images/story-03.jpg" alt="Nha Trang">
+              <p>And now, we celebrate with you.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
