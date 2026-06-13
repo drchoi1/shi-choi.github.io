@@ -80,13 +80,29 @@
     }
 
     /* Typography overrides */
+    .wrapper strong {color: #3A2A20 !important;}
     .wrapper h3,
     .wrapper h3 a,
     .wrapper li,
     .wrapper li a {
       color: #3A2A20 !important;
     }
-    .wrapper strong {color: #3A2A20 !important;}
+    .room-card h3 a {
+      color: #3A2A20 !important;
+    }
+
+    .wrapper p a {
+      color: var(--deep-olive) !important;
+      text-decoration: underline;
+      text-decoration-color: var(--olive);
+      text-underline-offset: 3px;
+      border-bottom: none !important;
+    }
+
+    .wrapper p a:hover {
+      color: var(--deep-brown) !important;
+      text-decoration-color: var(--deep-brown);
+    }
 
     /* Stronger section title contrast */
     .wrapper h1,
@@ -388,12 +404,23 @@
 
           <div class="timeline-item">
             <div class="timeline-date">
-              <span>2023.07. / 2023.10.</span>
+              <span>2023.07.</span>
               <small>The usual beginning...</small>
             </div>
             <div class="timeline-content">
               <img src="/assets/images/story-01.jpg" alt="Jackd">
-              <p>'a Chinese scammer...' or maybe not?</p>
+              <p>Heejoong: 'Must be a Chinese scammer... or maybe not?'</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <span>2023.10.</span>
+              <small>Three months later</small>
+            </div>
+            <div class="timeline-content">
+              <img src="/assets/images/story-01.jpg" alt="Jackd">
+              <p>Lei tried again and our journey started.</p>
             </div>
           </div>
 
@@ -414,7 +441,7 @@
               <small>Nha Trang</small>
             </div>
             <div class="timeline-content">
-              <img src="/assets/images/story-03.jpg" alt="Nha Trang">
+              <img src="/assets/images/story-03.jpg" alt="Mia Nha Trang">
               <p>And now, we celebrate with you.</p>
             </div>
           </div>
