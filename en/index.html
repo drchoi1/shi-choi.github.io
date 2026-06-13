@@ -193,6 +193,49 @@
       background: white;
     }
 
+    .room-grid {
+      margin-top: 2.5em;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8em;
+    }
+
+    .room-card {
+      background: rgba(243, 238, 230, 0.75);
+      border: 1px solid var(--sage);
+      border-radius: 18px;
+      padding: 1.2em;
+      box-shadow: 0 8px 24px rgba(74, 53, 41, 0.12);
+    }
+
+    .room-card img {
+      width: 100%;
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 1em;
+    }
+
+    .room-card h3 {
+      margin-bottom: 0.4em;
+    }
+
+    .room-card h3 a {
+      color: var(--deep-brown) !important;
+      border-bottom-color: var(--olive) !important;
+    }
+
+    .room-card p {
+      font-size: 0.95em;
+    }
+
+    .reservation-forms {
+      margin-top: 3em;
+      padding-top: 2em;
+      border-top: 1px solid var(--sage);
+    }
+
     /* Mobile timeline */
     @media screen and (max-width: 736px) {
       .timeline-item {
@@ -213,11 +256,22 @@
       }
     }
 
-    /* Mobile only: reduce empty space before survey starts */
+    /* Mobile RSVP: reduce empty space before survey starts */
     @media screen and (max-width: 736px) {
       .rsvp-form iframe {
-        min-height: 620px;
-        height: 620px;
+        min-height: 640px;
+        height: 640px;
+      }
+    }
+
+    /* Mobile hotel booking */
+    @media screen and (max-width: 980px) {
+      .room-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .room-card img {
+        height: auto;
       }
     }
 
@@ -387,7 +441,155 @@
     <section id="hotel" class="wrapper style2 fade-up">
       <div class="inner">
         <h2>Hotel booking</h2>
-        <p>Coming soon.</p>
+
+        <p>
+          Our wedding will take place at the beautiful MNT Resort. To make your stay as convenient as possible, we have secured a special discounted rate for a variety of room types, with breakfast included.
+        </p>
+
+        <p>
+          Please review the room options below, along with the resort website, and send your completed reservation form to
+          <a href="mailto:sm@mianhatrang.com">sm@mianhatrang.com</a>
+          by <strong>February 3, 2027</strong>.
+        </p>
+
+        <p>
+          February 3 is the deadline for this special pricing. However, rooms may sell out before then, so we recommend making your reservation as soon as you have purchased your flight tickets.
+        </p>
+
+        <div class="room-grid">
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-garden-1.jpg" alt="Gardenview-1bedroom">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/garden-view-one-bedroom/" target="_blank">
+                Garden view 1-bedroom
+              </a>
+            </h3>
+            <p><b>VND 4,000,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-ocean-1.jpg" alt="Oceanview-1bedroom">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/ocean-view-one-bedroom/" target="_blank">
+                Ocean view 1-bedroom
+              </a>
+            </h3>
+            <p><b>VND 4,900,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-ocean-2.jpg" alt="Oceanview-2bedroom">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/ocean-view-two-bedroom/" target="_blank">
+                Ocean view 2-bedroom
+              </a>
+            </h3>
+            <p><b>VND 6,300,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-garden-villa.jpg" alt="Garden-villa">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/garden-villa/" target="_blank">
+                Garden Villa
+              </a>
+            </h3>
+            <p><b>VND 5,100,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-beachfront-villa.jpg" alt="Beachfront-villa">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/beachfront-villa/" target="_blank">
+                Beachfront Villa
+              </a>
+            </h3>
+            <p><b>VND 7,800,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-cliff-villa.jpg" alt="Cliff-villa">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/cliff-villa/" target="_blank">
+                Cliff Villa
+              </a>
+            </h3>
+            <p><b>VND 8,300,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-ocean-2-villa.jpg" alt="Oceanview-2bedroom-villa">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/ocean-view-two-bedroom-villa/" target="_blank">
+                Ocean view 2-bedroom Villa
+              </a>
+            </h3>
+            <p><b>VND 12,500,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-ocean-2-villa.jpg" alt="Oceanview-2bedroom-villa">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/ocean-view-two-bedroom-villa/" target="_blank">
+                Ocean view 2-bedroom Villa
+              </a>
+            </h3>
+            <p><b>VND 12,500,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+          <article class="room-card">
+            <img src="/assets/images/MNT-5-bedroom-residence.png" alt="5bedroom-residence">
+            <h3>
+              <a href="https://mianhatrang.com/accommodation/mia-luxury-five-bedroom-residence/" target="_blank">
+                Mia Luxury 5-bedroom Residence
+              </a>
+            </h3>
+            <p><b>VND 26,000,000 net/room/night</b> (inclusive of 5% service charge and then 10% VAT, 
+              included breakfast for 2 adults/bedroom)</p>
+          </article>
+
+        </div>
+
+        <div class="reservation-forms">
+          <h3>Reservation form</h3>
+
+          <p>
+            Please download or open the reservation form below, complete it, and send it to
+            <a href="mailto:sm@mianhatrang.com">sm@mianhatrang.com</a>.
+          </p>
+
+          <ul class="actions">
+            <li>
+              <a href="/assets/files/Reservation form_Wedding Shi & Choi_3.4.2027.pdf" class="button" target="_blank">
+                PDF form
+              </a>
+            </li>
+            <li>
+              <a href="/assets/files/Reservation form_Wedding Shi & Choi_3.4.2027.doc" class="button" target="_blank">
+                Word form
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.google.com/document/d/15vR5G4-s4tV7xbUlVgcLsGZDcPRoAhboMRNX-MSsysc/edit?usp=sharing" class="button" target="_blank">
+                Google Docs form
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          In case you have any questions regarding the details of this room block at Mia Nha Trang, feel free to reach out to <a href="mailto:info@mianhatrang.com">info@mianhatrang.com</a>.
+        </p>
+
       </div>
     </section>
 
