@@ -4087,8 +4087,19 @@ input, select, textarea {
 
 	body.wedding-page .timeline-date {
 		color: var(--deep-brown);
+		cursor: pointer;
+		list-style: none;
 		padding-right: 1.5em;
 		text-align: right;
+	}
+
+	body.wedding-page .timeline-date::-webkit-details-marker {
+		display: none;
+	}
+
+	body.wedding-page .timeline-date:focus-visible {
+		outline: 2px solid var(--olive);
+		outline-offset: 0.35em;
 	}
 
 	body.wedding-page .timeline-date span {
@@ -4108,6 +4119,7 @@ input, select, textarea {
 	}
 
 	body.wedding-page .timeline-content {
+		grid-column: 2;
 		max-width: 620px;
 	}
 
@@ -4156,6 +4168,11 @@ input, select, textarea {
 	body.wedding-page .timeline-detail p {
 		margin: 0.75em 0 0 0;
 		max-width: 520px;
+	}
+
+	body.wedding-page .timeline-item.milestone > .timeline-detail {
+		grid-column: 2;
+		margin-left: 0;
 	}
 
 	body.wedding-page .rsvp-form {
@@ -4378,21 +4395,27 @@ input, select, textarea {
 			text-align: left;
 		}
 
-			body.wedding-page .timeline-content img {
-				max-width: 100%;
-			}
+		body.wedding-page .timeline-content {
+			grid-column: 1;
+		}
 
-			body.wedding-page .timeline-detail {
-				margin-left: 1em;
-			}
+		body.wedding-page .timeline-content img {
+			max-width: 100%;
+		}
 
-			body.wedding-page .timeline-detail img {
-				max-width: 100%;
-			}
+		body.wedding-page .timeline-detail,
+		body.wedding-page .timeline-item.milestone > .timeline-detail {
+			grid-column: 1;
+			margin-left: 0;
+		}
 
-			body.wedding-page .rsvp-form iframe {
-				height: 640px;
-				min-height: 640px;
-			}
+		body.wedding-page .timeline-detail img {
+			max-width: 100%;
+		}
+
+		body.wedding-page .rsvp-form iframe {
+			height: 640px;
+			min-height: 640px;
+		}
 
 	}
