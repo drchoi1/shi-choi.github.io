@@ -4164,13 +4164,14 @@ input, select, textarea {
 
 	body.wedding-page .timeline-chapter span {
 		display: block;
-		font-size: 1.8em;
+		font-size: 1.05em;
 		font-weight: 600;
 		grid-column: 1;
-		letter-spacing: 0.05em;
-		line-height: 1.1;
+		letter-spacing: 0.04em;
+		line-height: 1.35;
 		padding-right: 1.5em;
 		text-align: right;
+		text-transform: uppercase;
 	}
 
 	body.wedding-page .timeline-chapter small {
