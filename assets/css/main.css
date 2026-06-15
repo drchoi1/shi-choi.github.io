@@ -4130,6 +4130,34 @@ input, select, textarea {
 		max-width: 520px;
 	}
 
+	body.wedding-page .timeline-detail {
+		background: rgba(243, 238, 230, 0.55);
+		border-left: 1px solid var(--sage);
+		margin-left: 220px;
+		max-width: 620px;
+		padding: 0.9em 1.2em;
+	}
+
+	body.wedding-page .timeline-detail summary {
+		color: var(--deep-olive);
+		cursor: pointer;
+		font-weight: 600;
+	}
+
+	body.wedding-page .timeline-detail img {
+		border-radius: 14px;
+		box-shadow: 0 8px 22px rgba(74, 53, 41, 0.14);
+		display: block;
+		margin-top: 1em;
+		max-width: 520px;
+		width: 100%;
+	}
+
+	body.wedding-page .timeline-detail p {
+		margin: 0.75em 0 0 0;
+		max-width: 520px;
+	}
+
 	body.wedding-page .rsvp-form {
 		margin-top: 2em;
 	}
@@ -4350,13 +4378,21 @@ input, select, textarea {
 			text-align: left;
 		}
 
-		body.wedding-page .timeline-content img {
-			max-width: 100%;
-		}
+			body.wedding-page .timeline-content img {
+				max-width: 100%;
+			}
 
-		body.wedding-page .rsvp-form iframe {
-			height: 640px;
-			min-height: 640px;
-		}
+			body.wedding-page .timeline-detail {
+				margin-left: 1em;
+			}
+
+			body.wedding-page .timeline-detail img {
+				max-width: 100%;
+			}
+
+			body.wedding-page .rsvp-form iframe {
+				height: 640px;
+				min-height: 640px;
+			}
 
 	}
