@@ -4211,9 +4211,7 @@ input, select, textarea {
 	}
 
 	body.wedding-page .timeline-minor {
-		display: grid;
-		gap: 2.5em;
-		grid-template-columns: 220px 1fr;
+		display: block;
 		min-height: 1.25em;
 		position: relative;
 	}
@@ -4550,9 +4548,6 @@ input, select, textarea {
 		}
 
 		body.wedding-page .timeline-minor {
-			gap: 1em;
-			grid-column: 1;
-			grid-template-columns: 1fr;
 			padding-left: 1em;
 		}
 
