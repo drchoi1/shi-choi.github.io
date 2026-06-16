@@ -4216,6 +4216,37 @@ input, select, textarea {
 		position: relative;
 	}
 
+	body.wedding-page .timeline-minor:before {
+		background: var(--soft-sage);
+		content: '';
+		height: 2.35em;
+		left: 220px;
+		position: absolute;
+		top: -0.55em;
+		transform: translateX(-50%);
+		width: 7px;
+		z-index: 1;
+	}
+
+	body.wedding-page .timeline-minor:after {
+		background: repeating-linear-gradient(
+			to bottom,
+			var(--olive) 0,
+			var(--olive) 2px,
+			transparent 2px,
+			transparent 5px
+		);
+		content: '';
+		height: 2.35em;
+		left: 220px;
+		opacity: 0.8;
+		position: absolute;
+		top: -0.55em;
+		transform: translateX(-50%);
+		width: 1px;
+		z-index: 1;
+	}
+
 	body.wedding-page .timeline-minor summary {
 		cursor: pointer;
 		display: grid;
@@ -4231,27 +4262,26 @@ input, select, textarea {
 	}
 
 	body.wedding-page .timeline-minor summary:before {
-		background: var(--soft-sage);
-		border: 2px solid var(--olive);
+		background: var(--olive);
 		border-radius: 50%;
 		content: '';
-		height: 9px;
+		height: 6px;
 		left: 220px;
 		position: absolute;
-		top: 0.45em;
+		top: 0.55em;
 		transform: translateX(-50%);
-		width: 9px;
-		z-index: 1;
+		width: 6px;
+		z-index: 2;
 	}
 
 	body.wedding-page .timeline-minor[open] summary:before {
-		background: var(--olive);
+		background: var(--deep-olive);
 	}
 
 	body.wedding-page .timeline-minor:hover summary:before,
 	body.wedding-page .timeline-minor summary:focus-visible:before {
-		background: var(--olive);
-		transform: translateX(-50%) scale(1.2);
+		background: var(--deep-olive);
+		transform: translateX(-50%) scale(1.35);
 	}
 
 	body.wedding-page .timeline-minor summary:focus-visible {
@@ -4270,11 +4300,14 @@ input, select, textarea {
 	}
 
 	body.wedding-page .timeline-minor-content {
-		background: rgba(243, 238, 230, 0.55);
-		border-left: 1px solid var(--sage);
+		background: rgba(243, 238, 230, 0.68);
+		border: 1px solid rgba(169, 184, 148, 0.7);
+		border-radius: 12px;
+		box-shadow: 0 8px 22px rgba(74, 53, 41, 0.08);
 		margin-left: calc(220px + 2.5em);
+		margin-top: 0.65em;
 		max-width: 620px;
-		padding: 0.9em 1.2em;
+		padding: 1em 1.15em;
 	}
 
 	body.wedding-page .timeline-minor img {
@@ -4549,6 +4582,11 @@ input, select, textarea {
 
 		body.wedding-page .timeline-minor {
 			padding-left: 1em;
+		}
+
+		body.wedding-page .timeline-minor:before,
+		body.wedding-page .timeline-minor:after {
+			left: 0;
 		}
 
 		body.wedding-page .timeline-minor summary {
