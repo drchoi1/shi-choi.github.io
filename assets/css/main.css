@@ -4060,6 +4060,7 @@ input, select, textarea {
 		opacity: 0.85;
 		position: absolute;
 		top: 4.3em;
+		transform: translateX(-50%);
 		width: 1px;
 	}
 
@@ -4321,6 +4322,10 @@ input, select, textarea {
 	body.wedding-page .timeline-minor p {
 		margin: 0.75em 0 0 0;
 		max-width: 520px;
+	}
+
+	body.wedding-page .timeline-minor-content h4 {
+		color: #3A2A20 !important;
 	}
 
 	body.wedding-page .rsvp-form {
