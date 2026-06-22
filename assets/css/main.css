@@ -4362,6 +4362,38 @@ input, select, textarea {
 		padding-left: 0.25em;
 	}
 
+	body.wedding-page .travel-section {
+		border-top: 1px solid var(--sage);
+		margin-top: 2.5em;
+		padding-top: 2em;
+	}
+
+	body.wedding-page .travel-section h3 {
+		margin-bottom: 0.75em;
+	}
+
+	body.wedding-page .route-grid {
+		display: grid;
+		gap: 1.2em;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 1.2em;
+	}
+
+	body.wedding-page .route-grid section {
+		background: rgba(243, 238, 230, 0.48);
+		border: 1px solid rgba(145, 154, 118, 0.7);
+		border-radius: 8px;
+		padding: 1.1em 1.2em;
+	}
+
+	body.wedding-page .route-grid h4 {
+		margin-bottom: 0.6em;
+	}
+
+	body.wedding-page .route-grid ul {
+		margin-bottom: 0;
+	}
+
 	body.wedding-page .room-grid {
 		display: grid;
 		gap: 1.8em;
@@ -4509,6 +4541,7 @@ input, select, textarea {
 
 	@media screen and (max-width: 980px) {
 
+		body.wedding-page .route-grid,
 		body.wedding-page .room-grid {
 			grid-template-columns: 1fr;
 		}
