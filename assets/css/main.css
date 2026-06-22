@@ -3990,7 +3990,12 @@ input, select, textarea {
 		color: var(--warm-brown) !important;
 	}
 
-	body.wedding-page .wrapper p a {
+	body.wedding-page .wrapper .compact-copy {
+		margin-bottom: 0;
+	}
+
+	body.wedding-page .wrapper p a,
+	body.wedding-page .wrapper li a {
 		border-bottom: none !important;
 		color: var(--deep-olive) !important;
 		text-decoration: underline;
@@ -3998,7 +4003,8 @@ input, select, textarea {
 		text-underline-offset: 3px;
 	}
 
-	body.wedding-page .wrapper p a:hover {
+	body.wedding-page .wrapper p a:hover,
+	body.wedding-page .wrapper li a:hover {
 		color: var(--deep-brown) !important;
 		text-decoration-color: var(--deep-brown);
 	}
