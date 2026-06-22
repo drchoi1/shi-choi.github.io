@@ -4224,6 +4224,39 @@ input, select, textarea {
 		max-width: 520px;
 	}
 
+	body.wedding-page .timeline-substory {
+		background: rgba(243, 238, 230, 0.5);
+		border: 1px solid rgba(169, 184, 148, 0.65);
+		border-radius: 10px;
+		margin: 0 0 1em 0;
+		padding: 0.85em 1em;
+	}
+
+	body.wedding-page .timeline-substory summary {
+		color: var(--deep-olive);
+		cursor: pointer;
+		font-weight: 600;
+		list-style: none;
+	}
+
+	body.wedding-page .timeline-substory summary::-webkit-details-marker {
+		display: none;
+	}
+
+	body.wedding-page .timeline-substory summary:after {
+		content: '+';
+		float: right;
+		font-weight: 600;
+	}
+
+	body.wedding-page .timeline-substory[open] summary:after {
+		content: '-';
+	}
+
+	body.wedding-page .timeline-substory > div {
+		margin-top: 1em;
+	}
+
 	body.wedding-page .timeline-minor {
 		display: block;
 		min-height: 1.25em;
