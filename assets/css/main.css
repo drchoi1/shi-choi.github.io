@@ -3977,7 +3977,10 @@ input, select, textarea {
 
 	body.wedding-page .wrapper h1,
 	body.wedding-page .wrapper h2,
-	body.wedding-page .wrapper h3 {
+	body.wedding-page .wrapper h3,
+	body.wedding-page .wrapper h4,
+	body.wedding-page .wrapper h5,
+	body.wedding-page .wrapper h6 {
 		color: var(--deep-brown) !important;
 		font-weight: 600;
 		letter-spacing: 0.04em;
@@ -4372,26 +4375,56 @@ input, select, textarea {
 		margin-bottom: 0.75em;
 	}
 
-	body.wedding-page .route-grid {
-		display: grid;
-		gap: 1.2em;
-		grid-template-columns: repeat(2, 1fr);
+	body.wedding-page .route-table {
 		margin-top: 1.2em;
 	}
 
-	body.wedding-page .route-grid section {
+	body.wedding-page .route-table table {
 		background: rgba(243, 238, 230, 0.48);
 		border: 1px solid rgba(145, 154, 118, 0.7);
+		border-collapse: collapse;
 		border-radius: 8px;
-		padding: 1.1em 1.2em;
-	}
-
-	body.wedding-page .route-grid h4 {
-		margin-bottom: 0.6em;
-	}
-
-	body.wedding-page .route-grid ul {
 		margin-bottom: 0;
+		min-width: 680px;
+		overflow: hidden;
+	}
+
+	body.wedding-page .route-table thead {
+		background: rgba(145, 154, 118, 0.18);
+		border-bottom: 1px solid var(--sage);
+	}
+
+	body.wedding-page .route-table tbody tr {
+		border-color: rgba(145, 154, 118, 0.45);
+	}
+
+	body.wedding-page .route-table tbody tr:nth-child(2n + 1) {
+		background-color: rgba(255, 255, 255, 0.22);
+	}
+
+	body.wedding-page .route-table th,
+	body.wedding-page .route-table td {
+		color: var(--warm-brown) !important;
+		padding: 0.85em 1em;
+		vertical-align: middle;
+	}
+
+	body.wedding-page .route-table th {
+		color: var(--deep-brown) !important;
+		font-weight: 600;
+	}
+
+	body.wedding-page .airport-code {
+		background: rgba(102, 114, 78, 0.14);
+		border: 1px solid rgba(102, 114, 78, 0.35);
+		border-radius: 4px;
+		color: var(--deep-brown);
+		display: inline-block;
+		font-size: 0.82em;
+		font-weight: 600;
+		line-height: 1.4;
+		margin: 0 0.1em;
+		padding: 0.05em 0.45em;
 	}
 
 	body.wedding-page .room-grid {
@@ -4541,7 +4574,6 @@ input, select, textarea {
 
 	@media screen and (max-width: 980px) {
 
-		body.wedding-page .route-grid,
 		body.wedding-page .room-grid {
 			grid-template-columns: 1fr;
 		}
