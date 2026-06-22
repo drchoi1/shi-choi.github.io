@@ -3990,23 +3990,27 @@ input, select, textarea {
 		color: var(--warm-brown) !important;
 	}
 
-	body.wedding-page .wrapper .compact-copy {
+	body.wedding-page #directions .list-intro {
 		margin-bottom: 0;
 	}
 
-	body.wedding-page .wrapper p a,
-	body.wedding-page .wrapper li a {
+	body.wedding-page #directions .list-intro + ul {
+		margin-top: 0;
+	}
+
+	body.wedding-page .wrapper a[href]:not(.button) {
 		border-bottom: none !important;
 		color: var(--deep-olive) !important;
-		text-decoration: underline;
-		text-decoration-color: var(--olive);
+		text-decoration-line: underline !important;
+		text-decoration-style: solid !important;
+		text-decoration-thickness: 1px;
+		text-decoration-color: var(--olive) !important;
 		text-underline-offset: 3px;
 	}
 
-	body.wedding-page .wrapper p a:hover,
-	body.wedding-page .wrapper li a:hover {
+	body.wedding-page .wrapper a[href]:not(.button):hover {
 		color: var(--deep-brown) !important;
-		text-decoration-color: var(--deep-brown);
+		text-decoration-color: var(--deep-brown) !important;
 	}
 
 	body.wedding-page .wrapper.style1 {
