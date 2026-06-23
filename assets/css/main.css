@@ -3939,7 +3939,14 @@ input, select, textarea {
 	body.wedding-page #sidebar nav a {
 		color: var(--deep-brown) !important;
 		font-family: "Cormorant Garamond", serif;
+		font-size: 0.72em;
 		letter-spacing: 0.05em;
+	}
+
+	body.wedding-page #sidebar nav a .sidebar-link-subtitle {
+		display: block;
+		font-size: 0.86em;
+		line-height: 1.25;
 	}
 
 	body.wedding-page #sidebar nav a:before,
@@ -4088,8 +4095,20 @@ input, select, textarea {
 		padding: 6px 10px;
 	}
 
+	body.wedding-page #home > .inner {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
 	body.wedding-page .save-the-date-image {
+		border-radius: 18px;
+		box-shadow: none;
+		display: block;
 		height: auto;
+		margin-left: auto;
+		margin-right: auto;
 		max-height: 90vh;
 		max-width: 90%;
 		width: auto;
