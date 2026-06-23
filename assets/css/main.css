@@ -4348,14 +4348,6 @@ input, select, textarea {
 		width: 100%;
 	}
 
-	body.wedding-page .epilogue-roll figcaption {
-		color: var(--warm-brown);
-		font-size: 0.88em;
-		line-height: 1.45;
-		max-width: min(82vw, 460px);
-		padding: 0.75em 0.85em 0.9em 0.85em;
-	}
-
 	body.wedding-page .epilogue-roll-empty {
 		background: rgba(243, 238, 230, 0.5);
 		border: 1px dashed rgba(102, 114, 78, 0.45);
