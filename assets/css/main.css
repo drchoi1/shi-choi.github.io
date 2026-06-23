@@ -4022,6 +4022,29 @@ input, select, textarea {
 		text-decoration-color: var(--deep-brown) !important;
 	}
 
+	body.wedding-page .permalink {
+		border-bottom: none !important;
+		color: var(--olive) !important;
+		display: inline-block;
+		font-size: 0.85em;
+		margin-left: 0.45em;
+		opacity: 0.7;
+		text-decoration: none !important;
+		text-transform: none;
+		transition: color 0.2s ease, opacity 0.2s ease;
+	}
+
+	body.wedding-page .permalink:hover,
+	body.wedding-page .permalink:focus-visible {
+		color: var(--deep-olive) !important;
+		opacity: 1;
+		text-decoration: none !important;
+	}
+
+	body.wedding-page .deferred-image {
+		background: rgba(243, 238, 230, 0.68);
+	}
+
 	body.wedding-page .wrapper.style1 {
 		background: var(--parchment) !important;
 	}
