@@ -4002,6 +4002,24 @@ input, select, textarea {
 		margin-top: 0;
 	}
 
+	body.wedding-page #directions ul ul {
+		list-style: none;
+		margin: 0.35em 0 0 0;
+		padding-left: 1.1em;
+	}
+
+	body.wedding-page #directions ul ul > li {
+		padding-left: 0.8em;
+		position: relative;
+	}
+
+	body.wedding-page #directions ul ul > li::before {
+		color: var(--warm-brown);
+		content: "-";
+		left: 0;
+		position: absolute;
+	}
+
 	body.wedding-page #directions .booking-note {
 		background: var(--soft-sage);
 		border-color: var(--olive);
