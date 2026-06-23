@@ -3927,6 +3927,10 @@ input, select, textarea {
 		margin: 0;
 	}
 
+	body.wedding-page [id] {
+		scroll-margin-top: 1.25em;
+	}
+
 	body.wedding-page #sidebar {
 		background: #E7DED2 !important;
 		width: 18em;
@@ -3996,6 +4000,11 @@ input, select, textarea {
 
 	body.wedding-page #directions .list-intro + ul {
 		margin-top: 0;
+	}
+
+	body.wedding-page #directions .booking-note {
+		background: var(--soft-sage);
+		border-color: var(--olive);
 	}
 
 	body.wedding-page .wrapper a[href]:not(.button) {
@@ -4285,20 +4294,34 @@ input, select, textarea {
 		background: rgba(243, 238, 230, 0.72);
 		border: 1px solid rgba(169, 184, 148, 0.7);
 		border-radius: 10px;
-		flex: 0 0 min(74vw, 280px);
+		flex: 0 0 auto;
 		margin: 0;
 		overflow: hidden;
 		scroll-snap-align: start;
+		width: min(64vw, 280px);
+	}
+
+	body.wedding-page .epilogue-roll figure.is-landscape {
+		width: min(82vw, 420px);
+	}
+
+	body.wedding-page .epilogue-roll figure.is-portrait {
+		width: min(58vw, 260px);
+	}
+
+	body.wedding-page .epilogue-roll figure.is-square {
+		width: min(68vw, 300px);
 	}
 
 	body.wedding-page .epilogue-roll img {
-		aspect-ratio: 4 / 5;
+		background: rgba(243, 238, 230, 0.82);
 		border-radius: 0;
 		box-shadow: none;
-		height: auto;
+		display: block;
+		height: clamp(220px, 36vw, 320px);
 		margin-bottom: 0;
-		max-width: none;
-		object-fit: cover;
+		max-width: min(82vw, 460px);
+		object-fit: contain;
 		width: 100%;
 	}
 
@@ -4306,6 +4329,7 @@ input, select, textarea {
 		color: var(--warm-brown);
 		font-size: 0.88em;
 		line-height: 1.45;
+		max-width: min(82vw, 460px);
 		padding: 0.75em 0.85em 0.9em 0.85em;
 	}
 
