@@ -4652,14 +4652,6 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
-	body.wedding-page .room-card .room-note {
-		border-top: 1px solid rgba(102, 114, 78, 0.35);
-		color: var(--deep-brown);
-		font-size: 0.88em;
-		margin-top: 0.85em;
-		padding-top: 0.85em;
-	}
-
 	body.wedding-page .reservation-forms {
 		border-top: 1px solid var(--sage);
 		margin-top: 3em;
