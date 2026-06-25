@@ -4059,6 +4059,12 @@ input, select, textarea {
 		transition: color 0.2s ease, opacity 0.2s ease;
 	}
 
+	body.wedding-page .wrapper a[href].permalink {
+		border-bottom: none !important;
+		text-decoration: none !important;
+		text-decoration-line: none !important;
+	}
+
 	body.wedding-page .permalink:hover,
 	body.wedding-page .permalink:focus-visible {
 		color: var(--deep-olive) !important;

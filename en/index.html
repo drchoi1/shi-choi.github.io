@@ -20,12 +20,14 @@
     ☰
   </div>
 
+  <!--
   <div class="language-selector">
     <select onchange="location.href=this.value">
       <option value="/en/" selected>English</option>
       <option value="/ko/">한국어</option>
     </select>
   </div>
+  -->
 
   <section id="sidebar">
     <div class="inner">
@@ -548,7 +550,7 @@
             <li>Rates are net per room, per night.</li>
             <li>Rates include 5% service charge and 10% VAT.</li>
             <li>Breakfast is included for the number of standard occupancy of each room type.</li>
-            <li>If you wish to add extra beds or children's breakfast, please contact Mia Resort directly, as additional charges may apply.</li>
+            <li>If you wish to add extra beds or children's breakfast, please contact <a href="mailto:info@mianhatrang.com">info@mianhatrang.com</a> directly, as additional charges may apply.</li>
             <li>The special pricing deadline is <strong>February 3, 2027</strong>, subject to availability.</li>
           </ul>
         </div>
@@ -850,13 +852,11 @@
 
   function addPermalinks() {
     var targets = [
-      '#story .timeline-year[id] > h3',
-      '#story details[id] > summary.timeline-chapter small',
-      '#story details[id].timeline-substory > summary',
-      '#story .epilogue-roll-label[id]',
-      '#hotel #hotel-room-block-details > h3',
-      '#directions #directions-travel-guide > h3',
-      '#directions .travel-section[id] > h3'
+      '#story > .inner > h2',
+      '#rsvp > .inner > h2',
+      '#hotel > .inner > h2',
+      '#directions > .inner > h2',
+      '#registry > .inner > h2'
     ];
 
     document.querySelectorAll(targets.join(',')).forEach(function(label) {
