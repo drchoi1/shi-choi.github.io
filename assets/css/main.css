@@ -4299,6 +4299,23 @@ input, select, textarea {
 		width: 100%;
 	}
 
+	body.wedding-page .instagram-reel-embed {
+		background: #fff;
+		border-radius: 18px;
+		box-shadow: 0 10px 30px rgba(74, 53, 41, 0.18);
+		margin-bottom: 1em;
+		max-width: 420px;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	body.wedding-page .instagram-reel-embed iframe {
+		border: 0;
+		display: block;
+		height: 680px;
+		width: 100%;
+	}
+
 	body.wedding-page .timeline-content p {
 		max-width: 520px;
 	}
@@ -4841,6 +4858,14 @@ input, select, textarea {
 
 		body.wedding-page .timeline-content img {
 			max-width: 100%;
+		}
+
+		body.wedding-page .instagram-reel-embed {
+			max-width: 100%;
+		}
+
+		body.wedding-page .instagram-reel-embed iframe {
+			height: min(720px, 145vw);
 		}
 
 		body.wedding-page .timeline-minor {
