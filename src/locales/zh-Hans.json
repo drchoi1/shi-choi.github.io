@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "Calvin & Hee Joong"
+  },
+  "nav": {
+    "home": "首页",
+    "story": "我们的故事",
+    "rsvp": " RSVP ",
+    "hotel": "Mia Nha Trang",
+    "hotelSubtitle": "（酒店预订）",
+    "directions": "交通指南",
+    "registry": "礼物"
+  },
+  "sections": {
+    "story": "我们的故事",
+    "rsvp": "RSVP",
+    "hotel": "Mia Nha Trang",
+    "directions": "交通指南",
+    "registry": "礼物"
+  },
+  "languageSelectorLabel": "语言"
+}

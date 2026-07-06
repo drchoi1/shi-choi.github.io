@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build:i18n": "node scripts/build-i18n.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
+  }
+}

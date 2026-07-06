@@ -1,0 +1,37 @@
+{
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "url": "/en/"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "url": "/ko/"
+    },
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-Hans",
+      "label": "中文",
+      "url": "/zh/"
+    }
+  ],
+  "media": {
+    "youtubeId": {
+      "en": "7IWNnMtqvTQ",
+      "ko": "7IWNnMtqvTQ",
+      "zh-Hans": "CHINESE_VIDEO_ID"
+    }
+  },
+  "forms": {
+    "rsvpUrl": {
+      "en": "https://forms.office.com/r/FazTVpUFUp",
+      "ko": "KOREAN_RSVP_LINK_HERE",
+      "zh-Hans": "CHINESE_RSVP_LINK_HERE"
+    }
+  }
+}
