@@ -4410,6 +4410,24 @@ input, select, textarea {
 		width: min(68vw, 300px);
 	}
 
+	body.wedding-page .epilogue-roll figure.epilogue-year-card {
+		align-items: center;
+		background: rgba(255, 255, 255, 0.58);
+		border-color: rgba(111, 125, 90, 0.5);
+		display: flex;
+		justify-content: center;
+		min-height: 210px;
+		width: min(46vw, 190px);
+	}
+
+	body.wedding-page .epilogue-year-card span {
+		color: var(--deep-olive);
+		font-family: "Cormorant Garamond", serif;
+		font-size: 2.3em;
+		font-weight: 600;
+		line-height: 1;
+	}
+
 	body.wedding-page .epilogue-roll img {
 		background: rgba(243, 238, 230, 0.82);
 		border-radius: 0;
