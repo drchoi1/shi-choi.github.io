@@ -87,6 +87,22 @@ function replaceLanguageSpecificUrls(html, languageCode) {
     .replace(/src="https:\/\/forms\.office\.com\/r\/[^"]+"/, `src="${rsvpUrl}"`);
 }
 
+function applyLocaleReplacements(html, locale) {
+  const replacements = locale.replacements || {};
+  const scriptStart = html.indexOf('\n  <script src="/assets/js/jquery.min.js">');
+  const translatableHtml = scriptStart === -1 ? html : html.slice(0, scriptStart);
+  const scriptHtml = scriptStart === -1 ? '' : html.slice(scriptStart);
+
+  const entries = Object.entries(replacements).sort((a, b) => b[0].length - a[0].length);
+  let translatedHtml = translatableHtml;
+
+  for (const [source, replacement] of entries) {
+    translatedHtml = translatedHtml.replaceAll(source, replacement);
+  }
+
+  return `${translatedHtml}${scriptHtml}`;
+}
+
 function buildPage(language) {
   const locale = locales.get(language.code);
   let html = sourceHtml;
@@ -97,6 +113,7 @@ function buildPage(language) {
   html = replaceNav(html, locale);
   html = replaceSectionHeadings(html, locale);
   html = replaceLanguageSpecificUrls(html, language.code);
+  html = applyLocaleReplacements(html, locale);
 
   html = html.replace(/<!-- generated-by-i18n -->\n?/g, '');
   html = html.replace('</head>', '  <!-- generated-by-i18n -->\n</head>');
