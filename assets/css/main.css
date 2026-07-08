@@ -4127,6 +4127,13 @@ input, select, textarea {
 		background: #E8E3D8 !important;
 	}
 
+	body.wedding-page #wrapper::after {
+		background: var(--parchment);
+		content: "";
+		display: block;
+		height: clamp(16rem, 45vh, 28rem);
+	}
+
 	body.wedding-page .language-selector {
 		position: fixed;
 		right: 16px;
