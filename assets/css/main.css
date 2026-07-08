@@ -3921,11 +3921,18 @@ input, select, textarea {
 	}
 
 	@font-face {
-		font-family: "Wedding ZCOOL XiaoWei";
+		font-family: "Wedding Songti Local";
+		font-style: normal;
+		font-weight: 400;
+		src: local("Songti SC Regular"), local("Songti SC"), local("STSong");
+	}
+
+	@font-face {
+		font-family: "Wedding Noto Serif SC";
 		font-style: normal;
 		font-weight: 400;
 		font-display: swap;
-		src: url("../fonts/chinese/ZCOOLXiaoWei-Regular.ttf") format("truetype");
+		src: url("../fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
 	}
 
 	body.wedding-page {
@@ -3936,7 +3943,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page {
-		font-family: "Wedding ZCOOL XiaoWei", "Songti SC", STSong, SimSun, "Times New Roman", serif;
+		font-family: "Wedding Songti Local", "Songti SC", STSong, "Wedding Noto Serif SC", SimSun, "Times New Roman", serif;
 		font-synthesis: none;
 		font-synthesis-weight: none;
 	}
@@ -3958,7 +3965,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page #sidebar nav a {
-		font-family: "Wedding ZCOOL XiaoWei", "Songti SC", STSong, SimSun, "Times New Roman", serif;
+		font-family: "Wedding Songti Local", "Songti SC", STSong, "Wedding Noto Serif SC", SimSun, "Times New Roman", serif;
 		font-weight: 400;
 		letter-spacing: 0;
 	}

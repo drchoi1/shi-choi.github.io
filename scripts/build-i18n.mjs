@@ -140,11 +140,18 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
   <style>
     @font-face {
-      font-family: "Wedding ZCOOL XiaoWei";
+      font-family: "Wedding Songti Local";
+      font-style: normal;
+      font-weight: 400;
+      src: local("Songti SC Regular"), local("Songti SC"), local("STSong");
+    }
+
+    @font-face {
+      font-family: "Wedding Noto Serif SC";
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url("/assets/fonts/chinese/ZCOOLXiaoWei-Regular.ttf") format("truetype");
+      src: url("/assets/fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
     }
 
     :root {
@@ -236,7 +243,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
     }
 
     .language-options a[lang="zh-Hans"] {
-      font-family: "Wedding ZCOOL XiaoWei", "Songti SC", STSong, SimSun, "Times New Roman", serif;
+      font-family: "Wedding Songti Local", "Songti SC", STSong, "Wedding Noto Serif SC", SimSun, "Times New Roman", serif;
       font-synthesis: none;
       font-synthesis-weight: none;
       letter-spacing: 0;
