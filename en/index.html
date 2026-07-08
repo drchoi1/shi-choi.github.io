@@ -7,12 +7,13 @@
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <title>Calvin &amp; Hee Joong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20260708-bottom-scroll">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20260708-fast-load">
   <noscript><link rel="stylesheet" href="/assets/css/noscript.css"></noscript>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
   <!-- generated-by-i18n -->
 </head>
@@ -657,7 +658,7 @@
         <div class="rsvp-form">
 
           <iframe
-            src="https://forms.office.com/r/FazTVpUFUp"
+            data-deferred-src="https://forms.office.com/r/FazTVpUFUp"
             loading="lazy"
             width="100%"
             height="1200"
@@ -1071,6 +1072,47 @@
     });
   }
 
+  function observeDeferredMedia() {
+    var media = Array.prototype.slice.call(document.querySelectorAll('img[data-deferred-src], iframe[data-deferred-src]'));
+
+    if (!media.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      media.forEach(function(item) {
+        if (item.tagName.toLowerCase() === 'iframe') {
+          loadDeferredFrames(item.parentElement || document);
+        } else {
+          loadDeferredImages(item.parentElement || document);
+        }
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+
+        var item = entry.target;
+        observer.unobserve(item);
+
+        if (item.tagName.toLowerCase() === 'iframe') {
+          item.src = item.dataset.deferredSrc;
+          item.removeAttribute('data-deferred-src');
+        } else {
+          item.src = item.dataset.deferredSrc;
+          item.removeAttribute('data-deferred-src');
+        }
+      });
+    }, {
+      rootMargin: '600px 0px',
+      threshold: 0.01
+    });
+
+    media.forEach(function(item) {
+      observer.observe(item);
+    });
+  }
+
   function classifyEpilogueRollImages() {
     document.querySelectorAll('.epilogue-roll figure img').forEach(function(img) {
       function classify() {
@@ -1096,6 +1138,7 @@
     addPermalinks();
     enableSidebarSwipeClose();
     classifyEpilogueRollImages();
+    observeDeferredMedia();
 
     document.querySelectorAll('#year-2024 details, #year-2025 details, #year-2026 details, #year-2027 details, #epilogue details').forEach(function(details) {
       details.addEventListener('toggle', function() {
@@ -1103,24 +1146,12 @@
           loadDeferredImages(details);
           loadDeferredFrames(details);
           classifyEpilogueRollImages();
+          observeDeferredMedia();
         }
       });
     });
 
     openHashTarget();
-
-    [
-      { selector: '#year-2024', delay: 6000 },
-      { selector: '#year-2025', delay: 16000 },
-      { selector: '#year-2026', delay: 26000 },
-      { selector: '#year-2027', delay: 36000 },
-      { selector: '#epilogue', delay: 46000 }
-    ].forEach(function(batch) {
-      window.setTimeout(function() {
-        loadDeferredImages(batch.selector);
-        classifyEpilogueRollImages();
-      }, batch.delay);
-    });
   });
   window.addEventListener('hashchange', openHashTarget);
 </script>

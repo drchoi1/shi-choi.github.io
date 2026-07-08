@@ -3931,7 +3931,7 @@ input, select, textarea {
 		font-family: "Wedding Noto Serif SC";
 		font-style: normal;
 		font-weight: 400;
-		font-display: swap;
+		font-display: optional;
 		src: url("../fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
 	}
 

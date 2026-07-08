@@ -84,7 +84,7 @@ function replaceLanguageSpecificUrls(html, languageCode) {
 
   return html
     .replace(/https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+/g, `https://www.youtube-nocookie.com/embed/${youtubeId}`)
-    .replace(/src="https:\/\/forms\.office\.com\/r\/[^"]+"/, `src="${rsvpUrl}"`);
+    .replace(/(src|data-deferred-src)="https:\/\/forms\.office\.com\/r\/[^"]+"/, `data-deferred-src="${rsvpUrl}"`);
 }
 
 function applyLanguageSpecificContentRules(html, languageCode) {
@@ -217,7 +217,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
       font-family: "Wedding Noto Serif SC";
       font-style: normal;
       font-weight: 400;
-      font-display: swap;
+      font-display: optional;
       src: url("/assets/fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
     }
 
