@@ -21,10 +21,10 @@
     }
   ],
   "media": {
-    "youtubeId": {
-      "en": "7IWNnMtqvTQ",
-      "ko": "7IWNnMtqvTQ",
-      "zh-Hans": "CHINESE_VIDEO_ID"
+    "videoEmbedUrl": {
+      "en": "https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ",
+      "ko": "https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ",
+      "zh-Hans": "https://player.bilibili.com/player.html?isOutside=true&bvid=BV1iuM36LEE6&p=1"
     }
   },
   "forms": {

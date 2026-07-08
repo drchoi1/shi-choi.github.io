@@ -79,11 +79,11 @@ function localizedValue(values, languageCode) {
 }
 
 function replaceLanguageSpecificUrls(html, languageCode) {
-  const youtubeId = localizedValue(site.media.youtubeId, languageCode);
+  const videoEmbedUrl = localizedValue(site.media.videoEmbedUrl, languageCode);
   const rsvpUrl = localizedValue(site.forms.rsvpUrl, languageCode);
 
   return html
-    .replace(/https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+/g, `https://www.youtube-nocookie.com/embed/${youtubeId}`)
+    .replace(/https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+/g, videoEmbedUrl)
     .replace(/(src|data-deferred-src)="https:\/\/forms\.office\.com\/r\/[^"]+"/, `data-deferred-src="${rsvpUrl}"`);
 }
 
