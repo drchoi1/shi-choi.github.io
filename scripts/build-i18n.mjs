@@ -87,6 +87,57 @@ function replaceLanguageSpecificUrls(html, languageCode) {
     .replace(/src="https:\/\/forms\.office\.com\/r\/[^"]+"/, `src="${rsvpUrl}"`);
 }
 
+function applyLanguageSpecificContentRules(html, languageCode) {
+  if (languageCode !== 'zh-Hans') {
+    return html;
+  }
+
+  let localizedHtml = html.replace(
+    /\n        <div id="directions-us-flights" class="travel-section">[\s\S]*?\n        <\/div>(?=\n\n        <div id="directions-nonstop-cxr")/,
+    ''
+  );
+
+  for (const heading of ['From Korea', 'From Thailand', 'From Singapore', 'From Malaysia']) {
+    localizedHtml = localizedHtml.replace(
+      new RegExp(`\\n            <section>\\n              <h4>${heading}<\\/h4>[\\s\\S]*?\\n            <\\/section>`, 'g'),
+      ''
+    );
+  }
+
+  return localizedHtml.replace(
+    /(\n            <section>\n              <h4>From China<\/h4>[\s\S]*?\n            <\/section>)/,
+    `$1
+
+            <div id="directions-china-visa-note" class="booking-note">
+              <h3>Nota Bene</h3>
+              <p>
+                前往越南之前两周在 <a href="https://evisa.gov.vn/" target="_blank" rel="noopener">Vietnam National Electronic Visa system</a> 申请旅游的电子签证
+              </p>
+              <ul>
+                <li>
+                  申请流程与所需材料：
+                  <ol>
+                    <li>准备材料：有效期至少6个月的护照首页扫描件（清晰无反光）；一张4×6cm的白底证件照电子版（不戴眼镜）。</li>
+                    <li>在线填写：访问官网填写申请表 <a href="https://evisa.gov.vn/" target="_blank" rel="noopener">Vietnam National Electronic Visa system</a></li>
+                    <li>缴纳费用：单次入境25美元。支持Visa或Mastercard信用卡。</li>
+                    <li>等待审批：标准处理时间为3-5个工作日。</li>
+                    <li>下载打印：签证获批后会发至邮箱。务必打印两份纸质版随身携带，仅凭手机上的电子版通常不被接受。</li>
+                  </ol>
+                </li>
+                <li>
+                  入境越南注意事项
+                  <ol>
+                    <li>确保护照有效期至少6个月</li>
+                    <li>飞机降落后， 请首先前往 VISA ON ARRIVAL 柜台，出示护照以及电子签证，在入境官柜台换取 “红色纸质签证”。 务必请将纸质签证与护照一并妥善保管。</li>
+                    <li>拿红色纸质签证后再陆续排队入境</li>
+                    <li>数字入境卡（新规）：自2026年4月起，要求旅客在抵达前72小时内通过官网 <a href="https://prearrival.immigration.gov.vn/" target="_blank" rel="noopener">prearrival.immigration.gov.vn</a> 填写“越南数字入境卡”，生成二维码入境</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>`
+  );
+}
+
 function applyLocaleReplacements(html, locale) {
   const replacements = locale.replacements || {};
   const scriptStart = html.indexOf('\n  <script src="/assets/js/jquery.min.js">');
@@ -103,6 +154,20 @@ function applyLocaleReplacements(html, locale) {
   return `${translatedHtml}${scriptHtml}`;
 }
 
+function polishLocalizedHtml(html, languageCode) {
+  if (languageCode !== 'zh-Hans') {
+    return html;
+  }
+
+  return html.replace(
+    /<p>\n            请下载下方酒店房间预订表格，填写后发送邮件至\n            <a href="mailto:info@mianhatrang\.com">info@mianhatrang\.com<\/a> 和 <a href="mailto:sm@mianhatrang\.com">sm@mianhatrang\.com<\/a> <strong>请务必在2027年2月3日 前发送至酒店完成房间预订。房间可能会在截止日期前售罄，因此建议在行程确定后尽早预订。<\/strong>\.\n          <\/p>/,
+    `<p>
+            请下载下方酒店房间预订表格，填写后发送邮件至
+            <a href="mailto:info@mianhatrang.com">info@mianhatrang.com</a> 和 <a href="mailto:sm@mianhatrang.com">sm@mianhatrang.com</a>。请务必在<strong>2027年2月3日</strong> 前发送至酒店完成房间预订。房间可能会在截止日期前售罄，因此建议在行程确定后尽早预订。
+          </p>`
+  );
+}
+
 function buildPage(language) {
   const locale = locales.get(language.code);
   let html = sourceHtml;
@@ -113,9 +178,11 @@ function buildPage(language) {
   html = replaceNav(html, locale);
   html = replaceSectionHeadings(html, locale);
   html = replaceLanguageSpecificUrls(html, language.code);
+  html = applyLanguageSpecificContentRules(html, language.code);
   html = applyLocaleReplacements(html, locale);
+  html = polishLocalizedHtml(html, language.code);
 
-  html = html.replace(/<!-- generated-by-i18n -->\n?/g, '');
+  html = html.replace(/^[ \t]*<!-- generated-by-i18n -->\n?/gm, '');
   html = html.replace('</head>', '  <!-- generated-by-i18n -->\n</head>');
 
   return html;
