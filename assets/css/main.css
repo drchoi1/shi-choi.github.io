@@ -3920,6 +3920,14 @@ input, select, textarea {
 		--soft-sage: #DDE5D1;
 	}
 
+	@font-face {
+		font-family: "Wedding ZCOOL XiaoWei";
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url("../fonts/chinese/ZCOOLXiaoWei-Regular.ttf") format("truetype");
+	}
+
 	body.wedding-page {
 		background: var(--parchment);
 		color: #5A4638;
@@ -3928,7 +3936,9 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page {
-		font-family: "Songti SC", STSong, SimSun, "Times New Roman", serif;
+		font-family: "Wedding ZCOOL XiaoWei", "Songti SC", STSong, SimSun, "Times New Roman", serif;
+		font-synthesis: none;
+		font-synthesis-weight: none;
 	}
 
 	body.wedding-page [id] {
@@ -3948,8 +3958,9 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page #sidebar nav a {
-		font-family: "Songti SC", STSong, SimSun, "Times New Roman", serif;
-		letter-spacing: 0.02em;
+		font-family: "Wedding ZCOOL XiaoWei", "Songti SC", STSong, SimSun, "Times New Roman", serif;
+		font-weight: 400;
+		letter-spacing: 0;
 	}
 
 	body.wedding-page #sidebar nav a .sidebar-link-subtitle {
@@ -4004,6 +4015,18 @@ input, select, textarea {
 		color: var(--deep-brown) !important;
 		font-weight: 600;
 		letter-spacing: 0.04em;
+	}
+
+	html[lang="zh-Hans"] body.wedding-page .wrapper h1,
+	html[lang="zh-Hans"] body.wedding-page .wrapper h2,
+	html[lang="zh-Hans"] body.wedding-page .wrapper h3,
+	html[lang="zh-Hans"] body.wedding-page .wrapper h4,
+	html[lang="zh-Hans"] body.wedding-page .wrapper h5,
+	html[lang="zh-Hans"] body.wedding-page .wrapper h6,
+	html[lang="zh-Hans"] body.wedding-page .timeline-chapter span,
+	html[lang="zh-Hans"] body.wedding-page .timeline-chapter small {
+		font-weight: 400;
+		letter-spacing: 0;
 	}
 
 	body.wedding-page .wrapper p {
