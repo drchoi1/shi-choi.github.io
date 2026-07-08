@@ -3910,14 +3910,6 @@ input, select, textarea {
 
 /* Wedding page */
 
-	@font-face {
-		font-family: "Wedding Noto Sans SC";
-		font-style: normal;
-		font-weight: 400;
-		font-display: swap;
-		src: url("../fonts/chinese/NotoSansSC-Regular.ttf") format("truetype");
-	}
-
 	:root {
 		--parchment: #F3EEE6;
 		--warm-brown: #6F5643;
@@ -3936,7 +3928,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page {
-		font-family: "Wedding Noto Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+		font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 	}
 
 	body.wedding-page [id] {
@@ -3956,7 +3948,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page #sidebar nav a {
-		font-family: "Wedding Noto Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+		font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 		letter-spacing: 0.02em;
 	}
 

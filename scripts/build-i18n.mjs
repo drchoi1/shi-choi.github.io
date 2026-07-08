@@ -139,14 +139,6 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: "Wedding Noto Sans SC";
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url("/assets/fonts/chinese/NotoSansSC-Regular.ttf") format("truetype");
-    }
-
     :root {
       --parchment: #F3EEE6;
       --warm-brown: #6F5643;
@@ -236,7 +228,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
     }
 
     .language-options a[lang="zh-Hans"] {
-      font-family: "Wedding Noto Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       letter-spacing: 0;
     }
   </style>
