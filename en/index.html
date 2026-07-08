@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
 
-                        <!-- generated-by-i18n -->
+                          <!-- generated-by-i18n -->
 </head>
 
 <body class="is-preload wedding-page">
@@ -276,7 +276,7 @@
               <div class="timeline-content">
                 <h4>April 3rd, 2027: Calvin and Hee Joong look forward to celebrating this important day with you</h4>
                 <div class="story-video-embed">
-                  <iframe src="https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ" title="Welcome to HJ & Calvin's wedding" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe data-deferred-src="https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ" title="Welcome to HJ & Calvin's wedding" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               </div>
             </details>
@@ -658,6 +658,7 @@
 
           <iframe
             src="https://forms.office.com/r/FazTVpUFUp"
+            loading="lazy"
             width="100%"
             height="1200"
             frameborder="0">
@@ -993,10 +994,12 @@
     while (details) {
       details.open = true;
       loadDeferredImages(details);
+      loadDeferredFrames(details);
       details = details.parentElement ? details.parentElement.closest('details') : null;
     }
 
     loadDeferredImages(target);
+    loadDeferredFrames(target);
 
     window.setTimeout(function() {
       target.scrollIntoView({ block: 'start' });
@@ -1049,6 +1052,25 @@
     });
   }
 
+  function loadDeferredFrames(root) {
+    var scope;
+
+    if (!root) {
+      scope = document;
+    } else if (typeof root === 'string') {
+      scope = document.querySelector(root);
+    } else {
+      scope = root;
+    }
+
+    if (!scope) return;
+
+    scope.querySelectorAll('iframe[data-deferred-src]').forEach(function(frame) {
+      frame.src = frame.dataset.deferredSrc;
+      frame.removeAttribute('data-deferred-src');
+    });
+  }
+
   function classifyEpilogueRollImages() {
     document.querySelectorAll('.epilogue-roll figure img').forEach(function(img) {
       function classify() {
@@ -1079,6 +1101,7 @@
       details.addEventListener('toggle', function() {
         if (details.open) {
           loadDeferredImages(details);
+          loadDeferredFrames(details);
           classifyEpilogueRollImages();
         }
       });

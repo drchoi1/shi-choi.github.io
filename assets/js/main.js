@@ -23,12 +23,16 @@
 		if (browser.name == 'ie')
 			$body.addClass('is-ie');
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
+	// Play initial animations as soon as the DOM is ready. Waiting for every
+	// iframe and large media asset can leave the page visually blank too long.
+		var revealPage = function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-		});
+		};
+
+		$(revealPage);
+		$window.on('load', revealPage);
 
 	// Forms.
 
