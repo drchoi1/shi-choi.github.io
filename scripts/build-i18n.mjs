@@ -135,7 +135,18 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
   <title>Calvin & Hee Joong</title>
   <link rel="icon" type="image/png" href="/assets/images/favicon.jpg">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: "Wedding Noto Sans SC";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/assets/fonts/chinese/NotoSansSC-Regular.ttf") format("truetype");
+    }
+
     :root {
       --parchment: #F3EEE6;
       --warm-brown: #6F5643;
@@ -153,7 +164,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
       background: var(--parchment);
       color: var(--deep-brown);
       display: flex;
-      font-family: "Cormorant Garamond", "Noto Serif KR", "Noto Serif SC", Georgia, serif;
+      font-family: "Cormorant Garamond", Georgia, serif;
       justify-content: center;
       margin: 0;
       min-height: 100vh;
@@ -171,13 +182,17 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
     }
 
     .landing-image {
-      border: 1px solid rgba(111, 86, 67, 0.24);
-      box-shadow: 0 18px 42px rgba(74, 53, 41, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 0 28px 16px var(--parchment), 0 18px 42px rgba(74, 53, 41, 0.12);
       display: block;
       height: auto;
+      mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%), linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+      mask-composite: intersect;
       max-height: min(68vh, 720px);
       max-width: 100%;
       object-fit: contain;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%), linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+      -webkit-mask-composite: source-in;
     }
 
     .language-options {
@@ -194,7 +209,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
       color: var(--deep-brown);
       display: inline-flex;
       font-size: clamp(1rem, 2.2vw, 1.15rem);
-      font-weight: 600;
+      font-weight: 400;
       justify-content: center;
       letter-spacing: 0.02em;
       line-height: 1.2;
@@ -211,15 +226,28 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
       color: var(--deep-brown);
       outline: none;
     }
+
+    .language-options a[lang="en"] {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .language-options a[lang="ko"] {
+      font-family: "Cormorant Garamond", "Noto Serif KR", serif;
+    }
+
+    .language-options a[lang="zh-Hans"] {
+      font-family: "Wedding Noto Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
   </style>
 </head>
 <body>
   <main aria-label="Choose a language">
-    <img class="landing-image" src="/assets/images/hunjie-focused.jpg" alt="Calvin and Hee Joong">
+    <img class="landing-image" src="/assets/images/hunjie-focused.jpg" alt="Calvin and Hee Joong" loading="eager" fetchpriority="high" decoding="async">
     <nav class="language-options" aria-label="Language options">
-      <a href="/en/index.html">English</a>
-      <a href="/ko/index.html">한국어</a>
-      <a href="/zh/index.html">中文</a>
+      <a href="/en/index.html" lang="en">English</a>
+      <a href="/ko/index.html" lang="ko">한국어</a>
+      <a href="/zh/index.html" lang="zh-Hans">中文</a>
     </nav>
   </main>
 </body>
