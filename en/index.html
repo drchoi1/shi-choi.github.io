@@ -1034,6 +1034,19 @@
     });
   }
 
+  var deferredMediaObserver;
+
+  function resolveDeferredMedia(item) {
+    if (!item || !item.dataset || !item.dataset.deferredSrc) return;
+
+    item.src = item.dataset.deferredSrc;
+    item.removeAttribute('data-deferred-src');
+
+    if (deferredMediaObserver) {
+      deferredMediaObserver.unobserve(item);
+    }
+  }
+
   function loadDeferredImages(root) {
     var scope;
 
@@ -1047,10 +1060,7 @@
 
     if (!scope) return;
 
-    scope.querySelectorAll('img[data-deferred-src]').forEach(function(img) {
-      img.src = img.dataset.deferredSrc;
-      img.removeAttribute('data-deferred-src');
-    });
+    scope.querySelectorAll('img[data-deferred-src]').forEach(resolveDeferredMedia);
   }
 
   function loadDeferredFrames(root) {
@@ -1066,10 +1076,7 @@
 
     if (!scope) return;
 
-    scope.querySelectorAll('iframe[data-deferred-src]').forEach(function(frame) {
-      frame.src = frame.dataset.deferredSrc;
-      frame.removeAttribute('data-deferred-src');
-    });
+    scope.querySelectorAll('iframe[data-deferred-src]').forEach(resolveDeferredMedia);
   }
 
   function observeDeferredMedia() {
@@ -1088,28 +1095,24 @@
       return;
     }
 
-    var observer = new IntersectionObserver(function(entries) {
+    if (!deferredMediaObserver) {
+      deferredMediaObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (!entry.isIntersecting) return;
 
         var item = entry.target;
-        observer.unobserve(item);
-
-        if (item.tagName.toLowerCase() === 'iframe') {
-          item.src = item.dataset.deferredSrc;
-          item.removeAttribute('data-deferred-src');
-        } else {
-          item.src = item.dataset.deferredSrc;
-          item.removeAttribute('data-deferred-src');
-        }
+        resolveDeferredMedia(item);
       });
-    }, {
-      rootMargin: '600px 0px',
-      threshold: 0.01
-    });
+      }, {
+        rootMargin: '600px 0px',
+        threshold: 0.01
+      });
+    }
 
     media.forEach(function(item) {
-      observer.observe(item);
+      if (item.dataset.deferredObserved === 'true') return;
+      item.dataset.deferredObserved = 'true';
+      deferredMediaObserver.observe(item);
     });
   }
 
