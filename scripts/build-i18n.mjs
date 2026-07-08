@@ -228,7 +228,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
     }
 
     .language-options a[lang="zh-Hans"] {
-      font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-family: "Times New Roman", Arial, "Songti SC", SimSun, serif;
       letter-spacing: 0;
     }
   </style>

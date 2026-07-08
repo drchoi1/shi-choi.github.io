@@ -3928,7 +3928,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page {
-		font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+		font-family: "Times New Roman", Arial, "Songti SC", SimSun, serif;
 	}
 
 	body.wedding-page [id] {
@@ -3948,7 +3948,7 @@ input, select, textarea {
 	}
 
 	html[lang="zh-Hans"] body.wedding-page #sidebar nav a {
-		font-family: Lato, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+		font-family: "Times New Roman", Arial, "Songti SC", SimSun, serif;
 		letter-spacing: 0.02em;
 	}
 
