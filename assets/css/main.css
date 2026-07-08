@@ -3910,6 +3910,14 @@ input, select, textarea {
 
 /* Wedding page */
 
+	@font-face {
+		font-family: "Wedding Noto Serif SC";
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url("../fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
+	}
+
 	:root {
 		--parchment: #F3EEE6;
 		--warm-brown: #6F5643;
@@ -3927,6 +3935,10 @@ input, select, textarea {
 		margin: 0;
 	}
 
+	html[lang="zh-Hans"] body.wedding-page {
+		font-family: "Wedding Noto Serif SC", "Noto Serif SC", "Songti SC", "SimSun", serif;
+	}
+
 	body.wedding-page [id] {
 		scroll-margin-top: 1.25em;
 	}
@@ -3941,6 +3953,11 @@ input, select, textarea {
 		font-family: "Cormorant Garamond", serif;
 		font-size: 0.72em;
 		letter-spacing: 0.05em;
+	}
+
+	html[lang="zh-Hans"] body.wedding-page #sidebar nav a {
+		font-family: "Wedding Noto Serif SC", "Noto Serif SC", "Songti SC", "SimSun", serif;
+		letter-spacing: 0.02em;
 	}
 
 	body.wedding-page #sidebar nav a .sidebar-link-subtitle {
