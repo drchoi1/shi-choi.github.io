@@ -127,19 +127,101 @@ for (const language of site.languages) {
   await writeFile(path.join(outDir, 'index.html'), buildPage(language));
 }
 
-const defaultLanguage = site.languages.find((language) => language.code === site.defaultLanguage);
 await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
-<html lang="${defaultLanguage.htmlLang}">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=${defaultLanguage.url}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calvin & Hee Joong</title>
-  <script>
-    window.location.replace('${defaultLanguage.url}');
-  </script>
+  <link rel="icon" type="image/png" href="/assets/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <style>
+    :root {
+      --parchment: #F3EEE6;
+      --warm-brown: #6F5643;
+      --deep-brown: #4A3529;
+      --olive: #66724E;
+      --soft-sage: #DDE5D1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      align-items: center;
+      background: var(--parchment);
+      color: var(--deep-brown);
+      display: flex;
+      font-family: "Cormorant Garamond", "Noto Serif KR", "Noto Serif SC", Georgia, serif;
+      justify-content: center;
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    main {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem, 3vw, 2rem);
+      max-width: min(92vw, 760px);
+      text-align: center;
+      width: 100%;
+    }
+
+    .landing-image {
+      border: 1px solid rgba(111, 86, 67, 0.24);
+      box-shadow: 0 18px 42px rgba(74, 53, 41, 0.16);
+      display: block;
+      height: auto;
+      max-height: min(68vh, 720px);
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .language-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .language-options a {
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(111, 86, 67, 0.32);
+      color: var(--deep-brown);
+      display: inline-flex;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 600;
+      justify-content: center;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      min-width: 9.5rem;
+      padding: 0.85rem 1.25rem;
+      text-decoration: none;
+      transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .language-options a:hover,
+    .language-options a:focus {
+      background: var(--soft-sage);
+      border-color: var(--olive);
+      color: var(--deep-brown);
+      outline: none;
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to <a href="${defaultLanguage.url}">${escapeHtml(defaultLanguage.label)}</a>.</p>
+  <main aria-label="Choose a language">
+    <img class="landing-image" src="/assets/images/hunjie-focused.jpg" alt="Calvin and Hee Joong">
+    <nav class="language-options" aria-label="Language options">
+      <a href="/en/index.html">English</a>
+      <a href="/ko/index.html">한국어</a>
+      <a href="/zh/index.html">中文</a>
+    </nav>
+  </main>
 </body>
 </html>
 `);
