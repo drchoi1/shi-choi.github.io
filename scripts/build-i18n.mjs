@@ -228,7 +228,7 @@ await writeFile(path.join(root, 'index.html'), `<!DOCTYPE html>
     }
 
     .language-options a[lang="zh-Hans"] {
-      font-family: "Times New Roman", Arial, "Songti SC", SimSun, serif;
+      font-family: "Songti SC", STSong, SimSun, "Times New Roman", serif;
       letter-spacing: 0;
     }
   </style>
