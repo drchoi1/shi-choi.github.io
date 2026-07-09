@@ -168,9 +168,38 @@ function polishLocalizedHtml(html, languageCode) {
   );
 }
 
+function addRoomPriceEstimates(html, languageCode) {
+  const estimate = localizedValue(site.exchangeEstimates, languageCode);
+  const formatter = new Intl.NumberFormat(estimate.locale, {
+    maximumFractionDigits: 0
+  });
+
+  return html.replace(/<b>VND ([\d,]+)<\/b>/g, (match, formattedVnd) => {
+    const vnd = Number(formattedVnd.replaceAll(',', ''));
+    const converted = Math.round((vnd / 1000000) * estimate.perMillionVnd);
+    const xeUrl = `https://www.xe.com/currencyconverter/convert/?Amount=${vnd}&From=VND&To=${estimate.currency}`;
+    const convertedLabel = `${estimate.estimateLabel} ${estimate.currency} ${formatter.format(converted)}`;
+
+    return `<!-- price-conversion:${vnd} --><span class="price-conversion">
+              <button type="button" class="price-conversion-trigger" aria-expanded="false"><b>VND ${formattedVnd}</b></button>
+              <span class="price-conversion-bubble" role="tooltip">
+                <span>${escapeHtml(convertedLabel)}</span>
+                <a href="${xeUrl}" target="_blank" rel="noopener">${escapeHtml(estimate.linkLabel)}</a>
+              </span>
+            </span><!-- /price-conversion -->`;
+  });
+}
+
+function removeRoomPriceEstimates(html) {
+  return html.replace(
+    /<!-- price-conversion:(\d+) --><span class="price-conversion">[\s\S]*?<\/span><!-- \/price-conversion -->/g,
+    (match, vnd) => `<b>VND ${Number(vnd).toLocaleString('en-US')}</b>`
+  );
+}
+
 function buildPage(language) {
   const locale = locales.get(language.code);
-  let html = sourceHtml;
+  let html = removeRoomPriceEstimates(sourceHtml);
 
   html = html.replace(/<html lang="[^"]+">/, `<html lang="${language.htmlLang}">`);
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(locale.meta.title)}</title>`);
@@ -181,6 +210,7 @@ function buildPage(language) {
   html = applyLanguageSpecificContentRules(html, language.code);
   html = applyLocaleReplacements(html, locale);
   html = polishLocalizedHtml(html, language.code);
+  html = addRoomPriceEstimates(html, language.code);
 
   html = html.replace(/^[ \t]*<!-- generated-by-i18n -->\n?/gm, '');
   html = html.replace('</head>', '  <!-- generated-by-i18n -->\n</head>');

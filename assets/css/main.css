@@ -4793,6 +4793,97 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
+	body.wedding-page .price-conversion {
+		display: inline-block;
+		position: relative;
+	}
+
+	body.wedding-page .price-conversion-trigger {
+		-webkit-appearance: none;
+		appearance: none;
+		background: none !important;
+		border: 0;
+		border-bottom: 1px dotted currentColor;
+		border-radius: 0;
+		box-shadow: none !important;
+		color: inherit !important;
+		cursor: pointer;
+		font: inherit;
+		height: auto;
+		letter-spacing: 0;
+		line-height: inherit;
+		margin: 0;
+		padding: 0;
+		text-transform: none;
+	}
+
+	body.wedding-page .price-conversion-trigger:focus-visible {
+		outline: 2px solid var(--olive);
+		outline-offset: 3px;
+	}
+
+	body.wedding-page .price-conversion-bubble {
+		background: var(--deep-brown);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 6px;
+		bottom: calc(100% + 0.75em);
+		box-shadow: 0 8px 20px rgba(74, 53, 41, 0.24);
+		color: var(--parchment);
+		display: block;
+		font-size: 0.88em;
+		left: 50%;
+		line-height: 1.35;
+		max-width: calc(100vw - 3rem);
+		opacity: 0;
+		padding: 0.75em 0.9em;
+		pointer-events: none;
+		position: absolute;
+		text-align: left;
+		transform: translate(-50%, 0.35em);
+		transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+		visibility: hidden;
+		white-space: nowrap;
+		width: max-content;
+		z-index: 20;
+	}
+
+	body.wedding-page .price-conversion-bubble:after {
+		border-left: 0.45em solid transparent;
+		border-right: 0.45em solid transparent;
+		border-top: 0.45em solid var(--deep-brown);
+		content: "";
+		left: 50%;
+		position: absolute;
+		top: 100%;
+		transform: translateX(-50%);
+	}
+
+	body.wedding-page .price-conversion-bubble a {
+		border-bottom-color: rgba(243, 238, 230, 0.65) !important;
+		color: var(--parchment) !important;
+		display: block;
+		margin-top: 0.3em;
+	}
+
+	body.wedding-page .price-conversion.is-open .price-conversion-bubble,
+	body.wedding-page .price-conversion:focus-within .price-conversion-bubble {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate(-50%, 0);
+		visibility: visible;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+
+		body.wedding-page .price-conversion:hover .price-conversion-bubble {
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate(-50%, 0);
+			visibility: visible;
+		}
+
+	}
+
 	body.wedding-page .reservation-forms {
 		border-top: 1px solid var(--sage);
 		margin-top: 3em;
