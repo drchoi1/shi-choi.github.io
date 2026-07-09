@@ -4871,6 +4871,16 @@ input, select, textarea {
 		transform: translateX(-50%);
 	}
 
+	body.wedding-page .price-conversion-bubble:before {
+		background: transparent;
+		content: "";
+		height: 1em;
+		left: -0.75em;
+		position: absolute;
+		top: 100%;
+		width: calc(100% + 1.5em);
+	}
+
 	body.wedding-page .wrapper .price-conversion-bubble a[href] {
 		color: var(--parchment) !important;
 		display: block;
