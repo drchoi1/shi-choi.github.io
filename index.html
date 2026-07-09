@@ -6,10 +6,23 @@
   <title>Calvin & Hee Joong</title>
   <link rel="icon" type="image/png" href="/assets/images/favicon.jpg">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-display: swap;
+      font-family: "Cormorant Garamond";
+      font-style: normal;
+      font-weight: 400;
+      src: url("/assets/fonts/cormorant-garamond/cormorant-garamond-400.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Noto Serif KR";
+      font-style: normal;
+      font-weight: 400;
+      src: url("/assets/fonts/noto-serif-kr/noto-serif-kr-400.woff2") format("woff2");
+    }
+
     @font-face {
       font-family: "Wedding Songti Local";
       font-style: normal;
@@ -21,8 +34,8 @@
       font-family: "Wedding Noto Serif SC";
       font-style: normal;
       font-weight: 400;
-      font-display: optional;
-      src: url("/assets/fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
+      font-display: swap;
+      src: url("/assets/fonts/noto-serif-sc/noto-serif-sc-400.woff2") format("woff2");
     }
 
     :root {
@@ -125,9 +138,9 @@
   <main aria-label="Choose a language">
     <img class="landing-image" src="/assets/images/hunjie-focused.jpg" alt="Calvin and Hee Joong" loading="eager" fetchpriority="high" decoding="async">
     <nav class="language-options" aria-label="Language options">
-      <a href="/en/index.html" lang="en">English</a>
-      <a href="/ko/index.html" lang="ko">한국어</a>
-      <a href="/zh/index.html" lang="zh-Hans">中文</a>
+      <a href="/en/" lang="en">English</a>
+      <a href="/ko/" lang="ko">한국어</a>
+      <a href="/zh/" lang="zh-Hans">中文</a>
     </nav>
   </main>
 </body>

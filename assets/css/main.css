@@ -3921,6 +3921,46 @@ input, select, textarea {
 	}
 
 	@font-face {
+		font-display: swap;
+		font-family: "Cormorant Garamond";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/cormorant-garamond/cormorant-garamond-400.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-display: swap;
+		font-family: "Cormorant Garamond";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../fonts/cormorant-garamond/cormorant-garamond-500.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-display: swap;
+		font-family: "Cormorant Garamond";
+		font-style: normal;
+		font-weight: 600;
+		src: url("../fonts/cormorant-garamond/cormorant-garamond-600.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-display: swap;
+		font-family: "Noto Serif KR";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/noto-serif-kr/noto-serif-kr-400.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-display: swap;
+		font-family: "Noto Serif KR";
+		font-style: normal;
+		font-weight: 500;
+		src: url("../fonts/noto-serif-kr/noto-serif-kr-500.woff2") format("woff2");
+	}
+
+	@font-face {
 		font-family: "Wedding Songti Local";
 		font-style: normal;
 		font-weight: 400;
@@ -3931,8 +3971,8 @@ input, select, textarea {
 		font-family: "Wedding Noto Serif SC";
 		font-style: normal;
 		font-weight: 400;
-		font-display: optional;
-		src: url("../fonts/chinese/NotoSerifSC-Regular.ttf") format("truetype");
+		font-display: swap;
+		src: url("../fonts/noto-serif-sc/noto-serif-sc-400.woff2") format("woff2");
 	}
 
 	body.wedding-page {
