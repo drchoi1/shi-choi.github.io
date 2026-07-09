@@ -4897,6 +4897,7 @@ input, select, textarea {
 	}
 
 	body.wedding-page .price-conversion.is-open .price-conversion-bubble,
+	body.wedding-page .price-conversion.is-hover-open .price-conversion-bubble,
 	body.wedding-page .price-conversion:focus-within .price-conversion-bubble {
 		opacity: 1;
 		pointer-events: auto;

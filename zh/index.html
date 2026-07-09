@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <title>石磊 &amp; 崔希仲</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="/assets/css/main.css?v=20260709-price-bubbles-v3">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20260709-price-bubbles-v4">
   <noscript><link rel="stylesheet" href="/assets/css/noscript.css"></noscript>
 
   <!-- generated-by-i18n -->
@@ -1171,6 +1171,23 @@
 
     conversions.forEach(function(conversion) {
       var trigger = conversion.querySelector('.price-conversion-trigger');
+      var hoverCloseTimer;
+
+      conversion.addEventListener('mouseenter', function() {
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+        window.clearTimeout(hoverCloseTimer);
+        conversion.classList.add('is-hover-open');
+      });
+
+      conversion.addEventListener('mouseleave', function() {
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+        window.clearTimeout(hoverCloseTimer);
+        hoverCloseTimer = window.setTimeout(function() {
+          conversion.classList.remove('is-hover-open');
+        }, 750);
+      });
 
       trigger.addEventListener('click', function(event) {
         event.stopPropagation();
