@@ -4803,10 +4803,9 @@ input, select, textarea {
 		appearance: none;
 		background: none !important;
 		border: 0;
-		border-bottom: 1px dotted currentColor;
 		border-radius: 0;
 		box-shadow: none !important;
-		color: inherit !important;
+		color: var(--deep-olive) !important;
 		cursor: pointer;
 		font: inherit;
 		height: auto;
@@ -4814,7 +4813,21 @@ input, select, textarea {
 		line-height: inherit;
 		margin: 0;
 		padding: 0;
+		text-decoration: underline;
+		text-decoration-color: var(--olive);
+		text-decoration-thickness: 1.5px;
+		text-underline-offset: 3px;
 		text-transform: none;
+	}
+
+	body.wedding-page .price-conversion-trigger:after {
+		display: none !important;
+	}
+
+	body.wedding-page .price-conversion-trigger:hover {
+		color: var(--deep-brown) !important;
+		text-decoration-color: var(--deep-brown);
+		text-decoration-thickness: 2px;
 	}
 
 	body.wedding-page .price-conversion-trigger:focus-visible {
@@ -4858,11 +4871,19 @@ input, select, textarea {
 		transform: translateX(-50%);
 	}
 
-	body.wedding-page .price-conversion-bubble a {
-		border-bottom-color: rgba(243, 238, 230, 0.65) !important;
+	body.wedding-page .wrapper .price-conversion-bubble a[href] {
 		color: var(--parchment) !important;
 		display: block;
 		margin-top: 0.3em;
+		text-decoration-color: currentColor !important;
+		text-decoration-line: underline !important;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+	}
+
+	body.wedding-page .wrapper .price-conversion-bubble a[href]:hover {
+		color: #ffffff !important;
+		text-decoration-color: currentColor !important;
 	}
 
 	body.wedding-page .price-conversion.is-open .price-conversion-bubble,
