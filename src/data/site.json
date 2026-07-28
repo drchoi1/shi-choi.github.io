@@ -38,21 +38,21 @@
     "en": {
       "currency": "USD",
       "locale": "en-US",
-      "perMillionVnd": 39,
+      "perMillionVnd": 38,
       "estimateLabel": "Approximately",
       "linkLabel": "View the current rate on XE"
     },
     "ko": {
       "currency": "KRW",
       "locale": "ko-KR",
-      "perMillionVnd": 60000,
+      "perMillionVnd": 55000,
       "estimateLabel": "약",
       "linkLabel": "XE에서 현재 환율 확인"
     },
     "zh-Hans": {
       "currency": "CNY",
       "locale": "zh-CN",
-      "perMillionVnd": 258,
+      "perMillionVnd": 257,
       "estimateLabel": "约",
       "linkLabel": "在 XE 查看当前汇率"
     }
