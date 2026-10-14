@@ -21,6 +21,16 @@
     }
   ],
   "media": {
+    "homeImageUrl": {
+      "en": "/assets/images/Wedding-Program/Program_EN.jpeg",
+      "ko": "/assets/images/Wedding-Program/Program_KO.jpeg",
+      "zh-Hans": "/assets/images/Wedding-Program/Program_ZH.jpeg"
+    },
+    "homeImageAlt": {
+      "en": "Wedding program",
+      "ko": "결혼식 일정",
+      "zh-Hans": "婚礼日程"
+    },
     "videoEmbedUrl": {
       "en": "https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ",
       "ko": "https://www.youtube-nocookie.com/embed/7IWNnMtqvTQ",

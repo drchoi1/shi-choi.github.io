@@ -79,10 +79,13 @@ function localizedValue(values, languageCode) {
 }
 
 function replaceLanguageSpecificUrls(html, languageCode) {
+  const homeImageUrl = localizedValue(site.media.homeImageUrl, languageCode);
+  const homeImageAlt = localizedValue(site.media.homeImageAlt, languageCode);
   const videoEmbedUrl = localizedValue(site.media.videoEmbedUrl, languageCode);
   const rsvpUrl = localizedValue(site.forms.rsvpUrl, languageCode);
 
   return html
+    .replace(/(<img class="save-the-date-image" src=")[^"]+(" alt=")[^"]+/, `$1${homeImageUrl}$2${escapeHtml(homeImageAlt)}`)
     .replace(/https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+/g, videoEmbedUrl)
     .replace(/(src|data-deferred-src)="https:\/\/forms\.office\.com\/r\/[^"]+"/, `data-deferred-src="${rsvpUrl}"`);
 }
